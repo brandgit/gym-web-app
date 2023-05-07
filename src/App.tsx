@@ -1,8 +1,22 @@
+import { useState } from "react";
+import {Navbar} from "@/components/navbar"
+import { SelectedPage } from "@/shared/types";
+
+
 
 function App() {
 
+  const [selectedPage, setSelectedPage] = useState<SelectedPage>(SelectedPage.Home);
+  const [isTopOfPage, setIsTopOfPage] = useState<boolean>(true);
+
   return (
-    <div className="app w-full p-10 bg-blue-900 text-teal-50">Hello from Gym web app</div>
+    <div className="app bg-gray-20  ">
+      <Navbar
+      isTopOfPage={isTopOfPage}
+       selectedPage={selectedPage}
+       setSelectedPage={setSelectedPage}
+      />
+    </div>
   )
 }
 
